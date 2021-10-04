@@ -1,0 +1,96 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+		
+    <% @posaos.each do |posao| %>
+      <tr>
+				<% if posao.rok.future? %>
+				<div class="row mb-1" style="padding:1% 10% 1% 10%">
+				    <div class="col-md-12">
+								
+				      <div class="row g-0 my-auto border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+				        <div class="col p-4 d-flex flex-column position-static">
+									
+				          <strong class="d-inline-block mb-2 text-success">AKTIVNI POSLOVI</strong>
+				          <h3 class="mb-0"><%= posao.naziv_oglasa %></h3>
+				          <div class="mb-1 text-muted"><%= posao.naziv_poslodava %></div>
+				          <p class="card-text mb-auto"><%= posao.opis_oglasa %></p>
+				          <p class="card-text mb-auto"><%= posao.email_poslodavca %></p>
+									
+									<div class="row">
+										<div class="col-md-3">
+									<button type="button" class="btn btn-outline-primary"><%= link_to 'Show', posao %></button>
+									
+								</div>
+								<% if user_signed_in? %>
+								
+								<div class="col-md-3">
+									<button type="button" class="btn btn-outline-secondary"><%= link_to 'Edit', edit_posao_path(posao) %></button>
+									
+									</div>
+										<div class="col-md-3">
+											<button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', posao, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+											<% end %>
+								</div>
+									</div	>
+				        </div>
+				       
+				      </div>
+				    </div>
+				    
+				    </div>
+				  </div>
+     
+    <% end %>
+		<% end %>
+		
+
+
+
+
+
+
+
+		
+    <% @posaos.each do |posao| %>
+      <tr>
+				<% if !posao.rok.future? %>
+				<div class="row mb-1" style="padding:1% 10% 1% 10%">
+				    <div class="col-md-12">
+								
+				      <div class="row g-0 my-auto border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+				        <div class="col p-4 d-flex flex-column position-static">
+									
+				          <strong class="d-inline-block mb-2 text-danger">ISTEKLI POSLOVI</strong>
+				          <h3 class="mb-0"><%= posao.naziv_oglasa %></h3>
+				          <div class="mb-1 text-muted"><%= posao.naziv_poslodava %></div>
+				          <p class="card-text mb-auto"><%= posao.opis_oglasa %></p>
+				          <p class="card-text mb-auto"><%= posao.email_poslodavca %></p>
+									
+									<div class="row">
+												<div class="col-md-3">
+											<button type="button" class="btn btn-outline-primary"><%= link_to 'Show', posao %></button>
+									
+										</div>
+										<% if user_signed_in? %>
+								
+										<div class="col-md-3">
+											<button type="button" class="btn btn-outline-secondary"><%= link_to 'Edit', edit_posao_path(posao) %></button>
+									
+											</div>
+												<div class="col-md-3">
+													<button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', posao, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+													<% end %>
+									</div	>
+				        </div>
+				       
+				      </div>
+				    </div>
+				    
+				    </div>
+				  </div>
+     
+    <% end %>
+		<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prijavas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ime prezime</th>
+      <th>Datum rodjenja</th>
+      <th>Email</th>
+      <th>Broj telefona</th>
+      <th>Adresa</th>
+      <th>Strucna sprema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prijavas.each do |prijava| %>
+      <tr>
+        <td><%= prijava.ime_prezime %></td>
+        <td><%= prijava.datum_rodjenja %></td>
+        <td><%= prijava.email %></td>
+        <td><%= prijava.broj_telefona %></td>
+        <td><%= prijava.adresa %></td>
+        <td><%= prijava.strucna_sprema %></td>
+        <td><%= link_to "Download", prijava.dokument_url %></td>   
+				
+        <td><%= link_to 'Show', prijava %></td>
+        <td><%= link_to 'Edit', edit_prijava_path(prijava) %></td>
+        <td><%= link_to 'Destroy', prijava, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prijava', new_prijava_path %>

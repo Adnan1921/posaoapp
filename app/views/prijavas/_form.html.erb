@@ -1,0 +1,56 @@
+<%= form_with(model: prijava) do |form| %>
+  <% if prijava.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prijava.errors.count, "error") %> prohibited this prijava from being saved:</h2>
+
+      <ul>
+        <% prijava.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+		
+    <%= form.label :ime_prezime %>
+    <%= form.text_field :ime_prezime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :datum_rodjenja %>
+    <%= form.date_select :datum_rodjenja %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :broj_telefona %>
+    <%= form.text_field :broj_telefona %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adresa %>
+    <%= form.text_field :adresa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strucna_sprema %>
+    <%= form.text_field :strucna_sprema %>
+  </div>
+  <div class="field">
+	
+  <%= form.label :dokument %>   
+      <%= form.file_field :dokument %>
+		  </div>
+			 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<!-- /.container -->

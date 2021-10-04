@@ -1,0 +1,41 @@
+<%= form_with(model: posao) do |form| %>
+  <% if posao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(posao.errors.count, "error") %> prohibited this posao from being saved:</h2>
+
+      <ul>
+        <% posao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :naziv_oglasa %>
+    <%= form.text_field :naziv_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opis_oglasa %>
+    <%= form.text_field :opis_oglasa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :naziv_poslodava %>
+    <%= form.text_field :naziv_poslodava %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email_poslodavca %>
+    <%= form.text_field :email_poslodavca %>
+  </div>
+  <div class="field">
+	 <%= form.label :rok %><br>
+	 <%= form.date_select :rok %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  naziv_oglasa: MyString
+  opis_oglasa: MyString
+  naziv_poslodava: MyString
+  email_poslodavca: MyString
+
+two:
+  naziv_oglasa: MyString
+  opis_oglasa: MyString
+  naziv_poslodava: MyString
+  email_poslodavca: MyString

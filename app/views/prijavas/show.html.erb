@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ime prezime:</strong>
+  <%= @prijava.ime_prezime %>
+</p>
+
+<p>
+  <strong>Datum rodjenja:</strong>
+  <%= @prijava.datum_rodjenja %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @prijava.email %>
+</p>
+
+<p>
+  <strong>Broj telefona:</strong>
+  <%= @prijava.broj_telefona %>
+</p>
+
+<p>
+  <strong>Adresa:</strong>
+  <%= @prijava.adresa %>
+</p>
+
+<p>
+  <strong>Strucna sprema:</strong>
+  <%= @prijava.strucna_sprema %>
+</p>
+
+<%= link_to 'Edit', edit_prijava_path(@prijava) %> |
+<%= link_to 'Back', prijavas_path %>

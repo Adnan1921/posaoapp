@@ -1,0 +1,77 @@
+
+
+				<div class="row mb-1" style="padding:1% 10% 1% 10%">
+				    <div class="col-md-12">
+								
+				      <div class="row g-0 my-auto border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+				        <div class="col p-4 d-flex flex-column position-static">
+									
+				          <strong class="d-inline-block mb-2 text-success">ACTIVE</strong>
+				          <h3 class="mb-0"> <%= @posao.naziv_oglasa %></h3>
+				          <div class="mb-1 text-muted"><%= @posao.naziv_poslodava %></div>
+				          <p class="card-text mb-auto">  <%= @posao.opis_oglasa %>
+</p>
+				          <p class="card-text mb-auto"><%= @posao.email_poslodavca %></p>
+									
+								
+									</div	>
+				        </div>
+				       
+				      </div>
+				    </div>
+				    
+				    </div>
+				  </div>
+<%= render 'prijava', prijava: @prijava, posao: @posao %>
+<div class="container">
+	<% if user_signed_in? %>
+	
+	<h2>Prijave</h2>
+	<% for prijava in @prijave do%>
+	
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime prezime:</th>
+      <th scope="col">Datum rodjenja:</th>
+      <th scope="col">Email:</th>
+      <th scope="col">Broj telefona:</th>
+			<th scope="col">Adresa:</th>
+			<th scope="col">Strucna sprema:</th>
+			<th scope="col">Prijava:</th>
+			
+			
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= prijava.ime_prezime %></td>
+      <td> <%= prijava.datum_rodjenja %></td>
+      <td><%= prijava.email %></td>
+      <td><%= prijava.broj_telefona %></td>
+      <td><%= prijava.adresa %></td>
+      <td><%= prijava.strucna_sprema %></td>
+      <td><%= prijava.dokument_url %></td>
+			
+			
+    </tr>
+  </tbody>
+</table>
+
+
+	
+<% end %>
+<%else %>
+  <h1>Prijave za posao su vidljive samo logovanim korisnicima</h1>
+
+
+<% end %>
+
+
+
+<br>
+</div>
+<%= link_to 'Edit', edit_posao_path(@posao) %> |
+<%= link_to 'Back', posaos_path %>

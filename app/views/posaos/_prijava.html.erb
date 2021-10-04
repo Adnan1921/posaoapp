@@ -1,0 +1,55 @@
+<%= form_with(model: prijava) do |form| %>
+  <% if prijava.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prijava.errors.count, "error") %> prohibited this prijava from being saved:</h2>
+
+      <ul>
+        <% prijava.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<%= form.hidden_field :posao_id, :value => @posao.id%>
+	<div class="container">
+  <div class="field">
+    <%= form.label :ime_prezime, :class => "form-label" %>
+    <%= form.text_field :ime_prezime, :class => "form-control" %>
+  </div>
+	
+  <div class="field">
+    <%= form.label :datum_rodjenja %>
+    <%= form.date_select :datum_rodjenja, :class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, :class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :broj_telefona %>
+    <%= form.text_field :broj_telefona, :class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adresa %>
+    <%= form.text_field :adresa, :class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strucna_sprema %>
+    <%= form.text_field :strucna_sprema, :class => "form-control" %>
+  </div>
+  <div class="field">
+	
+  <%= form.label :dokument %>   
+      <%= form.file_field :dokument, :class => "form-control", :type => "file" %>
+		  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
+
+
