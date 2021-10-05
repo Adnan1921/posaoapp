@@ -14,21 +14,22 @@
 				        <div class="col p-4 d-flex flex-column position-static">
 									
 				          <strong class="d-inline-block mb-2 text-success">AKTIVNI POSLOVI</strong>
-									<h5>Naziv oglasa:</h5>
+									<h5>Naziv oglasa:<div class="mb-1 text"><%= posao.naziv_oglasa %></div></h5>
 									
-				          <h3 class="mb-0"><%= posao.naziv_oglasa %></h3>
-									<h5>Naziv poslodavca:</h5>
-				          <div class="mb-1 text-muted"><%= posao.naziv_poslodava %></div>
-									<h5>Opis oglasa:</h5>
+									<h5>Naziv poslodavca:<div class="mb-1 text-muted"><%= posao.naziv_poslodava %></div>
+</h5>
+									<h5>Opis oglasa:<p class="card-text mb-auto"><%= posao.opis_oglasa %></p>
+</h5>
 									
-				          <p class="card-text mb-auto"><%= posao.opis_oglasa %></p>
-									<h5>Email poslodavca:</h5>
+									<h5>Email poslodavca: <p class="card-text mb-auto"><%= posao.email_poslodavca %></p>
+</h5>
 									
-				          <p class="card-text mb-auto"><%= posao.email_poslodavca %></p>
-									<h5>Rok za prijavu:</h5>
-				          <p class="card-text mb-auto"><%= posao.rok %></p>
+									<h5>Rok za prijavu:<p class="card-text mb-auto"><%= posao.rok %></p>
+</h5>
+									<h5>Kategorija:<p class="card-text mb-auto">	<%=  Kategorijeposlova.find(posao.kategorijeposlova_id).naziv%></p></h5>
 									
-									
+								
+									<td></td>
 									<div class="row">
 										<div class="col-md-3">
 									<button type="button" class="btn btn-outline-primary"><%= link_to 'Show', posao %></button>

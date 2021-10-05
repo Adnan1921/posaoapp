@@ -36,7 +36,7 @@
 	 <%= form.label :rok, :class => "form-label" %><br>
 	 <%= form.date_select :rok, :class => "form-control" %>
   </div>
-    <%= select_tag "kategorijeposlova_id", options_from_collection_for_select(Kategorijeposlova.all, "id", "naziv"), {:include_blank => 'Search By Category'} %>
+    <%= select_tag "posao[kategorijeposlova_id]", options_from_collection_for_select(Kategorijeposlova.all, "id", "naziv"), {:include_blank => 'Search By Category'} %>
 
   <div class="actions">
     <%= form.submit %>
