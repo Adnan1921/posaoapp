@@ -24,11 +24,12 @@ class PrijavasController < ApplicationController
     @prijava = Prijava.new(prijava_params)
 
     respond_to do |format|
+      PosloviMailer.with(prijava: @prijava).uspjesna_email.deliver_now
       if @prijava.save
         format.html { redirect_to @prijava, notice: "Prijava was successfully created." }
         format.json { render :show, status: :created, location: @prijava }
       else
-        format.html { render 'posaos/_error', status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @prijava.errors, status: :unprocessable_entity }
       end
     end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naziv:</strong>
+  <%= @kategorijeposlova.naziv %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @kategorijeposlova.opis %>
+</p>
+
+<%= link_to 'Edit', edit_kategorijeposlova_path(@kategorijeposlova) %> |
+<%= link_to 'Back', kategorijeposlovas_path %>

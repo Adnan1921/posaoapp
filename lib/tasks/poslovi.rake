@@ -1,5 +1,5 @@
 namespace :poslovi do
-  desc "Seeds Posao"
+  desc "Dodavanje poslova"
   task seed_posao: :environment  do
     Posao.create([{
       naziv_oglasa: Faker::Job.title,
@@ -30,6 +30,6 @@ namespace :poslovi do
                   rok: Faker::Date.between(from: '2019-09-23', to: '2024-09-25')
                 }])
 
-    p "Created #{Posao.count} genres"
+    p "Dodano #{Posao.count} oglasa"
   end
 end

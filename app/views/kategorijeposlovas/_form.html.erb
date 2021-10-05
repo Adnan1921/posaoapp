@@ -1,0 +1,27 @@
+<%= form_with(model: kategorijeposlova) do |form| %>
+  <% if kategorijeposlova.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kategorijeposlova.errors.count, "error") %> prohibited this kategorijeposlova from being saved:</h2>
+
+      <ul>
+        <% kategorijeposlova.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :naziv %>
+    <%= form.text_field :naziv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opis %>
+    <%= form.text_area :opis %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

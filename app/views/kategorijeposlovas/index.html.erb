@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kategorijeposlovas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th>Opis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kategorijeposlovas.each do |kategorijeposlova| %>
+      <tr>
+        <td><%= kategorijeposlova.naziv %></td>
+        <td><%= kategorijeposlova.opis %></td>
+        <td><%= link_to 'Show', kategorijeposlova %></td>
+        <td><%= link_to 'Edit', edit_kategorijeposlova_path(kategorijeposlova) %></td>
+        <td><%= link_to 'Destroy', kategorijeposlova, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kategorijeposlova', new_kategorijeposlova_path %>

@@ -1,11 +1,12 @@
 namespace :user do
-  desc "Seeds User"
+  desc "Dodavanje User-a"
   task seed_user: :environment  do
     User.create([{
       email:'test@example.com',
+      ime: 'test',
       password:'123321'
     }])
 
-    p "Created #{User.count} genres"
+    p "Dodano #{User.count} usera"
   end
 end

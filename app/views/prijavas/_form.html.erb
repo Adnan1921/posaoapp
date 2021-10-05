@@ -37,14 +37,17 @@
     <%= form.text_field :adresa %>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :strucna_sprema %>
-    <%= form.text_field :strucna_sprema %>
-  </div>
+		<%= select_tag(:strucna_sprema, options_for_select([["Option 1",1],["Option 2",2],["Option 3",3]], params[:strucna_sprema] ), class:"select") %>
+
+  </div> -->
   <div class="field">
 	
   <%= form.label :dokument %>   
       <%= form.file_field :dokument %>
+			
+			
 		  </div>
 			 
   <div class="actions">

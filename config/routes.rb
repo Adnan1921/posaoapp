@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :kategorijeposlovas
+  resources :kategorijes
   resources :kategorijas
   devise_for :users
   resources :prijavas

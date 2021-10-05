@@ -1,2 +1,0 @@
-class Kategorija < ApplicationRecord
-end

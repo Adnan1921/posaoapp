@@ -1,3 +1,5 @@
+	<div class="container">
+
 <%= form_with(model: posao) do |form| %>
   <% if posao.errors.any? %>
     <div id="error_explanation">
@@ -12,30 +14,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :naziv_oglasa %>
-    <%= form.text_field :naziv_oglasa %>
+    <%= form.label :naziv_oglasa, :class => "form-label" %>
+    <%= form.text_field :naziv_oglasa, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :opis_oglasa %>
-    <%= form.text_field :opis_oglasa %>
+    <%= form.label :opis_oglasa, :class => "form-label" %>
+    <%= form.text_field :opis_oglasa, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :naziv_poslodava %>
-    <%= form.text_field :naziv_poslodava %>
+    <%= form.label :naziv_poslodava , :class => "form-label"%>
+    <%= form.text_field :naziv_poslodava, :class => "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :email_poslodavca %>
-    <%= form.text_field :email_poslodavca %>
+    <%= form.label :email_poslodavca, :class => "form-label" %>
+    <%= form.text_field :email_poslodavca, :class => "form-control" %>
   </div>
   <div class="field">
-	 <%= form.label :rok %><br>
-	 <%= form.date_select :rok %>
+	 <%= form.label :rok, :class => "form-label" %><br>
+	 <%= form.date_select :rok, :class => "form-control" %>
   </div>
+    <%= select_tag "kategorijeposlova_id", options_from_collection_for_select(Kategorijeposlova.all, "id", "naziv"), {:include_blank => 'Search By Category'} %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>

@@ -31,7 +31,6 @@ class PosaosController < ApplicationController
 
     respond_to do |format|
       if @posao.save
-        PosloviMailer.with(posao: @posao).uspjesna_email.deliver_now
         format.html { redirect_to @posao, notice: "Posao was successfully created." }
         format.json { render :show, status: :created, location: @posao }
       else
@@ -76,6 +75,6 @@ class PosaosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def posao_params
-      params.require(:posao).permit(:naziv_oglasa, :opis_oglasa, :naziv_poslodava, :email_poslodavca, :rok)
+      params.require(:posao).permit(:naziv_oglasa, :opis_oglasa, :naziv_poslodava, :email_poslodavca, :rok, :kategorijeposlova_id)
     end
 end
