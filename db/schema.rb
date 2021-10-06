@@ -57,13 +57,6 @@ ActiveRecord::Schema.define(version: 2021_10_05_061532) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "kategorijes", force: :cascade do |t|
-    t.string "kategorija"
-    t.string "opis_kategorije"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "posaos", force: :cascade do |t|
     t.string "naziv_oglasa"
     t.string "opis_oglasa"
@@ -72,10 +65,6 @@ ActiveRecord::Schema.define(version: 2021_10_05_061532) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "rok"
-    t.integer "kategorija"
-    t.string "category_id"
-    t.string "kategorija_id"
-    t.string "—force"
     t.string "kategorijeposlova_id"
   end
 

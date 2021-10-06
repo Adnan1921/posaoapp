@@ -57,8 +57,12 @@ class PosaosController < ApplicationController
 
   # DELETE /posaos/1 or /posaos/1.json
   def destroy
-    @prijave = Prijava.where(posao: @posao.id)
-          @prijave[0].destroy
+    @posao = Posao.find(params[:id])
+    @prijava = @posao.prijavas.where(posao_id: @posao.id) 
+    @prijava.each do |prijava|
+        prijava.destroy
+    end
+    
           @posao.destroy
               respond_to do |format|
       format.html { redirect_to posaos_url, notice: "Posao was successfully destroyed." }
